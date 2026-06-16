@@ -1,0 +1,278 @@
+/* ==============================================
+   GLOBAL STYLES — Shared across all pages
+   ============================================== */
+
+/* Universal selector removes default margins/padding from all elements and sets box model */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* Only hide cursor on desktop devices (not touch) */
+@media (hover: hover) and (pointer: fine) { *, *::before, *::after { cursor: none !important; } }
+
+/* CSS custom properties (variables) define the color scheme and typography for the entire site */
+:root {
+  --cream:      #FDF6EC;
+  --cream2:     #F5E6D0;
+  --terracotta: #C4704F;
+  --terra-dark: #A85C3A;
+  --terra-light:#E8916A;
+  --brown:      #5C3D2E;
+  --brown-light:#7A5240;
+  --sage:       #7A9E7E;
+  --sage-light: #A8C5AA;
+  --sage-dark:  #5A7A5E;
+  --charcoal:   #2C2C2C;
+  --grey-text:  #5A5A5A;
+  --grey-light: #888888;
+  --white:      #FFFFFF;
+  --border:     rgba(196,112,79,0.2);
+  --shadow:     0 4px 24px rgba(92,61,46,0.12);
+  --shadow-lg:  0 8px 40px rgba(92,61,46,0.18);
+  --fh: 'Quicksand', sans-serif;
+  --fb: 'Inter', sans-serif;
+  --nav: 70px;
+  --radius: 14px;
+  --radius-sm: 8px;
+}
+
+/* Custom paw print cursor - outer ring element fixed to screen that follows mouse with delay */
+#cur-ring {
+  position: fixed; pointer-events: none; z-index: 99999;
+  width: 38px; height: 38px;
+  /* Fixed positioning at top-left, translate centers it on mouse */
+  top: 0; left: 0;
+  transform: translate(-50%,-50%);
+  /* Smooth transition for size expansion on hover */
+  transition: width 0.18s ease, height 0.18s ease;
+}
+#cur-ring svg { width: 100%; height: 100%; }
+/* Inner dot element that snaps instantly to cursor position */
+#cur-dot {
+  position: fixed; pointer-events: none; z-index: 99999;
+  width: 8px; height: 8px;
+  /* Terracotta colored dot with glow effect */
+  background: var(--terracotta);
+  border-radius: 50%;
+  top: 0; left: 0;
+  transform: translate(-50%,-50%);
+  transition: background 0.15s;
+  box-shadow: 0 0 6px rgba(196,112,79,0.6);
+}
+/* Expand cursor elements when hovering over interactive items */
+body.cur-hover #cur-ring { width: 52px; height: 52px; }
+/* Change dot color to sage green on hover */
+body.cur-hover #cur-dot  { background: var(--sage); box-shadow: 0 0 8px rgba(122,158,126,0.7); }
+
+/* Enable smooth scrolling behavior and add padding to account for sticky nav */
+html { scroll-behavior: smooth; scroll-padding-top: var(--nav); }
+/* Body styling sets cream background, dark text color, and body font family */
+body {
+  background: var(--cream);
+  color: var(--charcoal);
+  font-family: var(--fb);
+  /* 16px base font size with 1.65 line height for readability */
+  font-size: 16px;
+  line-height: 1.65;
+  overflow-x: hidden;
+  /* Font smoothing improves text rendering on all browsers */
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--terracotta); text-decoration: none; transition: color 0.15s; }
+a:hover { color: var(--terra-dark); }
+:focus-visible { outline: 2px solid var(--terracotta); outline-offset: 3px; border-radius: 4px; }
+
+/* Scroll reveal animation - elements start hidden and invisible */
+.reveal { opacity:0; transform:translateY(22px); transition: opacity 0.55s ease, transform 0.55s ease; }
+/* When scrolled into view, visible class makes them fade in and slide up */
+.reveal.visible { opacity:1; transform:none; }
+
+/* Container constrains content to max width and centers it horizontally */
+.container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+/* Section class adds vertical padding for spacing between content blocks */
+.section { padding: 80px 0; }
+/* Section background color classes - cream, cream2, and brown variants */
+.section-cream { background: var(--cream); }
+.section-cream2 { background: var(--cream2); }
+/* Brown background used for footer and dark sections */
+.section-brown  { background: var(--brown); }
+
+/* Section heading styling with responsive font size (clamp) */
+.sh { /* section heading */
+  font-family: var(--fh);
+  /* Responsive font between 1.6rem and 2.2rem, scales with 3% of viewport width */
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+}
+/* Section subtitle styling - smaller text with grey color */
+.ss { font-size: 1rem; color: var(--grey-text); margin-bottom: 42px; }
+/* Utility class for center text alignment */
+.text-center { text-align: center; }
+
+/* Paw divider - decorative element with paw icon and lines */
+.paw-divider {
+  display: flex; align-items: center; justify-content: center;
+  gap: 12px; margin: 0 auto 36px;
+  font-size: 1.3rem;
+  color: var(--terracotta);
+  opacity: 0.5;
+}
+.paw-divider::before, .paw-divider::after {
+  content: ''; flex: 1; max-width: 120px;
+  height: 1.5px; background: var(--terracotta); opacity: 0.3;
+}
+
+/* Button base styling - flexbox centered content with pill-shaped design */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--fh); font-weight: 700; font-size: 0.95rem;
+  /* Padding for comfortable clicking, 50px border-radius creates rounded pill shape */
+  padding: 13px 28px; border-radius: 50px; border: none;
+  transition: all 0.2s ease; white-space: nowrap; min-height: 48px;
+  position: relative; overflow: hidden;
+}
+/* Shimmer effect overlay that sweeps across button on hover */
+.btn::after {
+  content: ''; position: absolute; top:-50%; left:-60%;
+  /* Creates skewed white highlight effect */
+  width:40%; height:200%; background: rgba(255,255,255,0.15);
+  transform:skewX(-20deg); transition: left 0.35s ease;
+}
+/* Animate shimmer from left to right on hover */
+.btn:hover::after { left: 120%; }
+/* Terracotta button variant - main CTA button with warm color */
+.btn-terra {
+  background: var(--terracotta); color: var(--white);
+  /* Subtle shadow for depth */
+  box-shadow: 0 4px 18px rgba(196,112,79,0.35);
+}
+/* Hover state moves button up and darkens color with stronger shadow */
+.btn-terra:hover { background: var(--terra-dark); color: var(--white); transform:translateY(-2px); box-shadow: 0 6px 24px rgba(196,112,79,0.45); }
+/* Sage button variant - secondary action button in green tone */
+.btn-sage {
+  background: var(--sage); color: var(--white);
+  box-shadow: 0 4px 18px rgba(122,158,126,0.3);
+}
+/* Sage button hover - raises button and darkens background */
+.btn-sage:hover { background: var(--sage-dark); color: var(--white); transform:translateY(-2px); }
+.btn-outline {
+  background: transparent; color: var(--terracotta);
+  border: 2px solid var(--terracotta);
+}
+.btn-outline:hover { background: var(--terracotta); color: var(--white); }
+.btn-outline-white {
+  background: transparent; color: var(--white);
+  border: 2px solid rgba(255,255,255,0.6);
+}
+.btn-outline-white:hover { background: var(--white); color: var(--brown); }
+.btn-full { width: 100%; }
+
+/* Floating paws container - background decoration that fills entire viewport */
+.floating-paws {
+  position: fixed; inset:0; pointer-events:none; z-index: 0; overflow:hidden;
+}
+/* Individual floating paw emoji with very low opacity for subtle effect */
+.fp {
+  position: absolute; font-size: 1.4rem;
+  /* Nearly invisible opacity and infinite animation */
+  opacity: 0.04; animation: floatPaw linear infinite;
+  color: var(--terracotta);
+}
+/* Animation makes paws float upward across page while rotating 360 degrees */
+@keyframes floatPaw {
+  from { transform: translateY(110vh) rotate(0deg); }
+  to   { transform: translateY(-10vh) rotate(360deg); }
+}
+
+/* Navigation bar - sticky positioning stays at top while scrolling */
+.nav {
+  position: sticky; top: 0; z-index: 1000;
+  background: rgba(253,246,236,0.96);
+  /* Glassmorphism effect with blur for semi-transparent appearance */
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  height: var(--nav);
+  /* Flexbox centers content vertically */
+  display: flex; align-items: center;
+  /* Subtle shadow underneath navigation */
+  box-shadow: 0 2px 16px rgba(92,61,46,0.08);
+}
+.nav-in {
+  max-width: 1140px; margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between; width: 100%;
+}
+.nav-logo {
+  font-family: var(--fh); font-weight: 700; font-size: 1.2rem;
+  color: var(--brown); display: flex; align-items: center; gap: 8px;
+  cursor: pointer;
+}
+.nav-logo .paw { font-size: 1.4rem; animation: pawWiggle 3s ease infinite; }
+@keyframes pawWiggle { 0%,100%{transform:rotate(-5deg)} 50%{transform:rotate(5deg)} }
+.nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
+.nav-links a {
+  font-family: var(--fh); font-size: 0.88rem; font-weight: 600;
+  color: var(--grey-text); padding: 8px 14px; border-radius: 50px;
+  transition: all 0.15s; position: relative; cursor: pointer;
+}
+.nav-links a:hover { color: var(--terracotta); background: rgba(196,112,79,0.08); }
+.nav-links a.active { color: var(--terracotta); background: rgba(196,112,79,0.1); }
+.nav-links .nav-book {
+  background: var(--terracotta); color: var(--white) !important;
+  border-radius: 50px; box-shadow: 0 2px 12px rgba(196,112,79,0.3);
+}
+.nav-links .nav-book:hover { background: var(--terra-dark); }
+
+/* Footer - dark brown background with semi-transparent white text */
+.footer {
+  background: var(--brown); color: rgba(255,255,255,0.8);
+  /* Padding creates space inside footer */
+  padding: 56px 0 24px;
+}
+/* Footer grid layout - 2fr for company info, 1fr for each navigation column */
+.footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; margin-bottom:40px; }
+.footer-logo { font-family: var(--fh); font-size:1.1rem; font-weight:700; color: var(--white); margin-bottom:10px; display:flex; align-items:center; gap:7px; }
+.footer-about { font-size:0.875rem; line-height:1.7; color:rgba(255,255,255,0.65); }
+.footer-col-h { font-family: var(--fh); font-size:0.72rem; font-weight:700; color:rgba(255,255,255,0.45); letter-spacing:2px; text-transform:uppercase; margin-bottom:14px; }
+.footer-links { list-style:none; display:flex; flex-direction:column; gap:7px; }
+.footer-links a { font-size:0.875rem; color:rgba(255,255,255,0.65); transition:color 0.15s; cursor: pointer; }
+.footer-links a:hover { color: var(--white); }
+.footer-bottom { padding-top:20px; border-top:1px solid rgba(255,255,255,0.1); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; font-size:0.78rem; color:rgba(255,255,255,0.4); }
+
+.social-row { display:flex; gap:10px; margin-top:4px; }
+.soc-btn {
+  width:42px; height:42px; border-radius: var(--radius-sm);
+  background: var(--cream2); display:flex; align-items:center; justify-content:center;
+  font-size:1.2rem; transition: all 0.15s; cursor: pointer;
+  border: 1px solid var(--border);
+}
+.soc-btn:hover { background: var(--terracotta); transform:translateY(-2px); box-shadow:0 4px 12px rgba(196,112,79,0.3); }
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .footer-grid { grid-template-columns:1fr 1fr; gap:28px; }
+}
+@media (max-width: 767px) {
+  :root { --nav: 60px; }
+  .nav-links a { padding:6px 9px; font-size:0.8rem; }
+  .footer-grid { grid-template-columns:1fr; }
+  .footer-bottom { flex-direction:column; text-align:center; }
+  .section { padding:52px 0; }
+}
+/* Form input styling - improve mobile touch targets */
+.form-input, .form-select, .form-textarea {
+  font-size: 16px; /* 16px prevents iOS zoom on focus */
+  min-height: 44px; /* Minimum touch target size */
+  padding: 12px 14px; /* Better mobile padding */
+}
+
+@media (max-width: 767px) {
+  .form-input, .form-select, .form-textarea { font-size: 16px; padding: 14px 16px; min-height: 48px; }
+}
+
+@media (max-width: 440px) {
+  .hero-btns { flex-direction:column; }
+  .hero-btns .btn { width:100%; }
+  /* Better button sizing on very small screens */
+  .btn { min-height: 48px; padding: 12px 20px; font-size: 0.9rem; }
+}

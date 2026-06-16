@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu & Pricing — The Meow Lounge</title>
+<meta name="description" content="Full menu and pricing at The Meow Lounge. Entry from £8. Hot drinks, cakes and light bites.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+
+<div id="cur-ring"><svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="19" cy="22" r="7" fill="rgba(196,112,79,0.18)" stroke="#C4704F" stroke-width="1.4"/><circle cx="13" cy="14" r="3" fill="rgba(196,112,79,0.18)" stroke="#C4704F" stroke-width="1.2"/><circle cx="19" cy="11" r="3" fill="rgba(196,112,79,0.18)" stroke="#C4704F" stroke-width="1.2"/><circle cx="25" cy="14" r="3" fill="rgba(196,112,79,0.18)" stroke="#C4704F" stroke-width="1.2"/></svg></div>
+<div id="cur-dot"></div>
+<div class="floating-paws" aria-hidden="true" id="fp-container"></div>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-in">
+    <div class="nav-logo" tabindex="0"><span class="paw" aria-hidden="true">🐾</span> The Meow Lounge</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cats.html">Our Cats</a></li>
+      <li><a href="menu.html" class="active">Menu</a></li>
+      <li><a href="booking.html">Booking</a></li>
+      <li><a href="rules.html">Café Rules</a></li>
+      <li><a href="info.html">Visit Us</a></li>
+      <li><a href="booking.html" class="nav-book">Book Now ☕</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div style="background:linear-gradient(180deg,var(--cream2),var(--cream));padding:56px 0 36px;border-bottom:1px solid var(--border)">
+  <div class="container text-center">
+    <h1 class="sh reveal">Menu & Pricing ☕</h1>
+    <p class="ss reveal">Entry prices include unlimited time with our cats. Food and drinks ordered separately.</p>
+    <div class="paw-divider reveal" aria-hidden="true">🐾</div>
+  </div>
+</div>
+
+<section class="section section-cream" aria-labelledby="pricing-h">
+  <div class="container">
+    <h2 class="sh text-center reveal" id="pricing-h">Entry Prices</h2>
+    <p class="ss text-center reveal">All sessions are 60 minutes. Drinks included in Afternoon Tea packages.</p>
+    <div class="pricing-grid">
+      <div class="price-card reveal">
+        <div class="price-icon">👶</div>
+        <div class="price-name">Child</div>
+        <div class="price-amount">£8<sub>/visit</sub></div>
+        <p class="price-includes">Ages 4–12. Under 4s free with a paying adult.</p>
+        <ul class="price-feats"><li>60-min session</li><li>Cat interaction</li><li>Complimentary hot chocolate</li></ul>
+        <a href="booking.html" class="btn btn-outline btn-full" style="font-size:0.82rem">Book Now</a>
+      </div>
+      <div class="price-card featured reveal" style="transition-delay:0.08s">
+        <div class="price-icon">🧑</div>
+        <div class="price-name">Adult</div>
+        <div class="price-amount">£12<sub>/visit</sub></div>
+        <p class="price-includes">Most popular. Add drinks from the menu separately.</p>
+        <ul class="price-feats"><li>60-min session</li><li>Cat interaction</li><li>Welcome drink voucher</li><li>Free WiFi</li></ul>
+        <a href="booking.html" class="btn btn-terra btn-full" style="font-size:0.82rem">Book Now</a>
+      </div>
+      <div class="price-card reveal" style="transition-delay:0.16s">
+        <div class="price-icon">🍰</div>
+        <div class="price-name">Afternoon Tea</div>
+        <div class="price-amount">£22<sub>/person</sub></div>
+        <p class="price-includes">Includes drinks + cake selection + 90-min session.</p>
+        <ul class="price-feats"><li>90-min session</li><li>Hot drink of choice</li><li>Cake & sandwich platter</li><li>Priority booking</li></ul>
+        <a href="booking.html" class="btn btn-outline btn-full" style="font-size:0.82rem">Book Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-cream2" aria-labelledby="menu-items-h">
+  <div class="container">
+    <h2 class="sh text-center reveal" id="menu-items-h">Food & Drinks Menu</h2>
+    <p class="ss text-center reveal">All items freshly made in our kitchen every morning</p>
+    <div class="menu-grid">
+      <div class="menu-card reveal">
+        <div class="menu-card-icon">☕</div>
+        <div class="menu-card-title">Hot Drinks</div>
+        <div class="menu-item"><div><div class="menu-item-name">Flat White</div><div class="menu-item-desc">Double espresso, steamed milk</div></div><div class="menu-item-price">£3.50</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Latte</div><div class="menu-item-desc">Single espresso, frothy milk</div></div><div class="menu-item-price">£3.80</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Cappuccino</div><div class="menu-item-desc">Classic Italian style</div></div><div class="menu-item-price">£3.80</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Hot Chocolate</div><div class="menu-item-desc">Rich Belgian chocolate, cream</div></div><div class="menu-item-price">£4.00</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Chai Latte</div><div class="menu-item-desc">Spiced, oat or whole milk</div></div><div class="menu-item-price">£4.20</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Selection of Teas</div><div class="menu-item-desc">English Breakfast, Earl Grey, Green, Peppermint</div></div><div class="menu-item-price">£2.80</div></div>
+      </div>
+      <div class="menu-card reveal" style="transition-delay:0.08s">
+        <div class="menu-card-icon">🧋</div>
+        <div class="menu-card-title">Cold Drinks</div>
+        <div class="menu-item"><div><div class="menu-item-name">Iced Latte</div><div class="menu-item-desc">Espresso, cold milk, ice</div></div><div class="menu-item-price">£4.00</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Iced Matcha Latte</div><div class="menu-item-desc">Ceremonial grade matcha</div></div><div class="menu-item-price">£4.50</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Fruit Smoothie</div><div class="menu-item-desc">Mango, strawberry or mixed berry</div></div><div class="menu-item-price">£4.80</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Sparkling Lemonade</div><div class="menu-item-desc">Homemade, fresh lemon</div></div><div class="menu-item-price">£3.50</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Still / Sparkling Water</div><div class="menu-item-desc">500ml bottle</div></div><div class="menu-item-price">£2.00</div></div>
+      </div>
+      <div class="menu-card reveal" style="transition-delay:0.12s">
+        <div class="menu-card-icon">🍰</div>
+        <div class="menu-card-title">Cakes & Bakes</div>
+        <div class="menu-item"><div><div class="menu-item-name">Carrot Cake</div><div class="menu-item-desc">Cream cheese frosting, walnuts</div></div><div class="menu-item-price">£4.50</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Victoria Sponge</div><div class="menu-item-desc">Homemade jam & cream</div></div><div class="menu-item-price">£4.00</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Paw Print Brownie</div><div class="menu-item-desc">Fudgy chocolate, our signature</div></div><div class="menu-item-price">£3.50</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Lemon Drizzle</div><div class="menu-item-desc">Zesty and light</div></div><div class="menu-item-price">£4.00</div></div>
+      </div>
+      <div class="menu-card reveal" style="transition-delay:0.18s">
+        <div class="menu-card-icon">🥪</div>
+        <div class="menu-card-title">Light Bites</div>
+        <div class="menu-item"><div><div class="menu-item-name">Toasted Sandwich</div><div class="menu-item-desc">Cheese & tomato, ham & cheese, tuna melt</div></div><div class="menu-item-price">£5.50</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Soup of the Day</div><div class="menu-item-desc">With artisan bread & butter</div></div><div class="menu-item-price">£5.80</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Avocado Toast</div><div class="menu-item-desc">Sourdough, chilli flakes, lemon</div></div><div class="menu-item-price">£6.50</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Afternoon Tea Platter</div><div class="menu-item-desc">Sandwiches, cake, scone (for 2)</div></div><div class="menu-item-price">£28</div></div>
+      </div>
+    </div>
+    <p class="allergen-note reveal">🌱 Vegan and gluten-free options available — ask a member of staff. Allergen info available on request.</p>
+  </div>
+</section>
+
+<template id="ft">
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div><div class="footer-logo"><span aria-hidden="true">🐾</span> The Meow Lounge</div><p class="footer-about">A cosy rescue cat café in the heart of Manchester's Northern Quarter. Sip, relax and meet some truly special cats.</p><div class="social-row" style="margin-top:14px"><div class="soc-btn">📸</div><div class="soc-btn">👍</div><div class="soc-btn">🎵</div><div class="soc-btn">🐦</div></div></div>
+        <div><div class="footer-col-h">Explore</div><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="cats.html">Our Cats</a></li><li><a href="menu.html">Menu & Pricing</a></li><li><a href="booking.html">Book a Visit</a></li><li><a href="rules.html">Café Rules</a></li></ul></div>
+        <div><div class="footer-col-h">Info</div><ul class="footer-links"><li><a href="info.html">Visit Us</a></li><li><a href="rules.html">Adoption Process</a></li><li><a href="rules.html">FAQ</a></li><li><a href="info.html">Contact Us</a></li></ul></div>
+        <div><div class="footer-col-h">Contact</div><ul class="footer-links"><li><a href="tel:01612340000">0161 234 0000</a></li><li><a href="mailto:hello@themeowlounge.co.uk">hello@themeowlounge.co.uk</a></li><li><a>14 Bloom Street</a></li><li><a>Manchester, M1 3HZ</a></li><li><a>Tue–Sun · From 10:00</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 The Meow Lounge Manchester. All rights reserved.</span><span>BTEC Level 3 Unit 15 — Khadija Rehmat</span></div>
+    </div>
+  </footer>
+</template>
+
+<div data-footer></div>
+<script src="js/global.js"></script>
+<script src="js/menu.js"></script>
+
+</body>
+</html>
