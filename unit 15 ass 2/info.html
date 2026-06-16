@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visit Us — The Meow Lounge</title>
+<meta name="description" content="Contact, location, opening hours and directions to The Meow Lounge cat café in Manchester's Northern Quarter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/info.css">
+</head>
+<body>
+
+<div id="cur-ring"><svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="19" cy="22" r="7" fill="rgba(196,112,79,0.18)" stroke="#C4704F" stroke-width="1.4"/><circle cx="13" cy="14" r="3" fill="rgba(196,112,79,0.18)" stroke="#C4704F" stroke-width="1.2"/><circle cx="19" cy="11" r="3" fill="rgba(196,112,79,0.18)" stroke="#C4704F" stroke-width="1.2"/><circle cx="25" cy="14" r="3" fill="rgba(196,112,79,0.18)" stroke="#C4704F" stroke-width="1.2"/></svg></div>
+<div id="cur-dot"></div>
+<div class="floating-paws" aria-hidden="true" id="fp-container"></div>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-in">
+    <div class="nav-logo" tabindex="0"><span class="paw" aria-hidden="true">🐾</span> The Meow Lounge</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cats.html">Our Cats</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="booking.html">Booking</a></li>
+      <li><a href="rules.html">Café Rules</a></li>
+      <li><a href="info.html" class="active">Visit Us</a></li>
+      <li><a href="booking.html" class="nav-book">Book Now ☕</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div style="background:linear-gradient(180deg,var(--cream2),var(--cream));padding:56px 0 36px;border-bottom:1px solid var(--border)">
+  <div class="container text-center">
+    <h1 class="sh reveal">Visit Us 📍</h1>
+    <p class="ss reveal">Find us in Manchester's Northern Quarter. Come say meow!</p>
+    <div class="paw-divider reveal" aria-hidden="true">🐾</div>
+  </div>
+</div>
+
+<section class="section section-cream" aria-labelledby="location-h">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-left reveal">
+        <h2 class="sh mb" id="location-h">📍 Where to Find Us</h2>
+        <div class="info-block">
+          <h3 class="info-block-h">Address</h3>
+          <p class="info-block-v">14 Bloom Street<br>Manchester, M1 3HZ<br>United Kingdom</p>
+        </div>
+        <div class="info-block">
+          <h3 class="info-block-h">Opening Hours</h3>
+          <table class="hours-table">
+            <tr><td>Monday</td><td>Closed</td></tr>
+            <tr><td>Tuesday–Saturday</td><td>10:00 – 19:00</td></tr>
+            <tr><td>Sunday</td><td>10:00 – 17:00</td></tr>
+            <tr><td><strong>Bank Holidays</strong></td><td><strong>10:00 – 17:00</strong></td></tr>
+          </table>
+          <p style="font-size:0.85rem;opacity:0.8;margin-top:12px;margin-bottom:0">⚠️ Last booking 1 hour before closing</p>
+        </div>
+        <div class="info-block">
+          <h3 class="info-block-h">Contact</h3>
+          <p class="info-block-v">
+            <a href="tel:+441612340000" style="display:block;margin-bottom:8px">☎️ 0161 234 0000</a>
+            <a href="mailto:hello@themeowlounge.co.uk" style="display:block">✉️ hello@themeowlounge.co.uk</a>
+          </p>
+        </div>
+        <div class="info-block">
+          <h3 class="info-block-h">Getting Here</h3>
+          <p class="info-block-v">🚇 <strong>Piccadilly</strong> station (5 min walk)<br>🚌 Buses: 10, 16, 42, 44<br>🅿️ Paid parking nearby</p>
+        </div>
+      </div>
+
+      <div class="contact-right reveal" style="transition-delay:0.08s">
+        <div class="map-placeholder" role="img" aria-label="Map location">
+          <div class="map-icon">📍</div>
+          <p style="margin:16px 0 0;color:var(--terra);font-weight:500">14 Bloom Street<br><span style="font-size:0.9rem;font-weight:400">Manchester City Centre</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-cream2" aria-labelledby="contact-h">
+  <div class="container">
+    <div style="max-width:600px;margin:0 auto">
+      <h2 class="sh text-center reveal mb" id="contact-h">Get in Touch 💬</h2>
+      <p class="ss text-center reveal">Have a question? We'd love to hear from you!</p>
+
+      <form id="contact-form" class="contact-form" style="margin-top:32px">
+        <div class="form-group">
+          <label for="cf-n" class="form-label">Your Name *</label>
+          <input type="text" id="cf-n" class="form-input" placeholder="Emma Smith" required aria-required="true" aria-describedby="ecf-n">
+          <span class="form-error emsg" id="ecf-n">Please enter your name</span>
+        </div>
+
+        <div class="form-group">
+          <label for="cf-e" class="form-label">Email Address *</label>
+          <input type="email" id="cf-e" class="form-input" placeholder="emma@example.com" required aria-required="true" aria-describedby="ecf-e">
+          <span class="form-error emsg" id="ecf-e">Please enter a valid email</span>
+        </div>
+
+        <div class="form-group">
+          <label for="cf-s" class="form-label">Subject *</label>
+          <select id="cf-s" class="form-select" required aria-required="true" aria-describedby="ecf-s">
+            <option value="">— Choose a subject —</option>
+            <option value="booking">Booking enquiry</option>
+            <option value="group">Group booking</option>
+            <option value="adoption">Adoption question</option>
+            <option value="event">Event enquiry</option>
+            <option value="other">Other</option>
+          </select>
+          <span class="form-error emsg" id="ecf-s">Please select a subject</span>
+        </div>
+
+        <div class="form-group">
+          <label for="cf-m" class="form-label">Message *</label>
+          <textarea id="cf-m" class="form-textarea" placeholder="Tell us what you'd like to know..." rows="5" required aria-required="true" aria-describedby="ecf-m"></textarea>
+          <span class="form-error emsg" id="ecf-m">Message must be at least 8 characters</span>
+        </div>
+
+        <button type="button" onclick="sendContact()" class="btn btn-terra" style="width:100%;padding:12px">Send Message 📨</button>
+      </form>
+
+      <div id="contact-ok" class="contact-ok" style="display:none">
+        <div style="font-size:3rem;text-align:center;margin-bottom:16px">✓</div>
+        <h3 style="text-align:center;color:var(--terra);margin:0 0 8px;font-size:1.2rem">Message Sent!</h3>
+        <p style="text-align:center;opacity:0.8;margin:0 0 16px">Thanks for getting in touch. We'll reply within 24 hours.</p>
+        <button type="button" onclick="location.reload()" class="btn btn-outline" style="width:100%;padding:10px">← Back</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<template id="ft">
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div><div class="footer-logo"><span aria-hidden="true">🐾</span> The Meow Lounge</div><p class="footer-about">A cosy rescue cat café in the heart of Manchester's Northern Quarter. Sip, relax and meet some truly special cats.</p><div class="social-row" style="margin-top:14px"><div class="soc-btn">📸</div><div class="soc-btn">👍</div><div class="soc-btn">🎵</div><div class="soc-btn">🐦</div></div></div>
+        <div><div class="footer-col-h">Explore</div><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="cats.html">Our Cats</a></li><li><a href="menu.html">Menu & Pricing</a></li><li><a href="booking.html">Book a Visit</a></li><li><a href="rules.html">Café Rules</a></li></ul></div>
+        <div><div class="footer-col-h">Info</div><ul class="footer-links"><li><a href="info.html">Visit Us</a></li><li><a href="rules.html">Adoption Process</a></li><li><a href="rules.html">FAQ</a></li><li><a href="info.html">Contact Us</a></li></ul></div>
+        <div><div class="footer-col-h">Contact</div><ul class="footer-links"><li><a href="tel:01612340000">0161 234 0000</a></li><li><a href="mailto:hello@themeowlounge.co.uk">hello@themeowlounge.co.uk</a></li><li><a>14 Bloom Street</a></li><li><a>Manchester, M1 3HZ</a></li><li><a>Tue–Sun · From 10:00</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 The Meow Lounge Manchester. All rights reserved.</span><span>BTEC Level 3 Unit 15 — Khadija Rehmat</span></div>
+    </div>
+  </footer>
+</template>
+
+<div data-footer></div>
+<script src="js/global.js"></script>
+<script src="js/info.js"></script>
+
+</body>
+</html>

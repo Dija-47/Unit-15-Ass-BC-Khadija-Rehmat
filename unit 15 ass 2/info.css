@@ -1,0 +1,81 @@
+/* INFO / VISIT US PAGE - Specific Styles */
+
+.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap: 40px; align-items:start; }
+
+.info-card {
+  background: var(--white); border-radius: var(--radius);
+  padding: 28px; box-shadow: var(--shadow);
+  display: flex; flex-direction:column; gap: 18px;
+}
+
+.info-item { display:flex; align-items:flex-start; gap:13px; }
+
+.info-icon {
+  width:42px; height:42px; border-radius: var(--radius-sm);
+  background: var(--cream2); display:flex; align-items:center; justify-content:center;
+  font-size:1.2rem; flex-shrink:0;
+}
+
+.info-label { font-family: var(--fh); font-size:0.72rem; font-weight:700; color: var(--grey-light); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:3px; }
+.info-val { font-size:0.95rem; color: var(--charcoal); }
+.info-val a { color:var(--terracotta); }
+
+.hours-grid { display:grid; grid-template-columns:1fr 1fr; gap:4px 20px; }
+
+.hours-row { font-size:0.875rem; display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px dashed var(--border); }
+.hours-row .day { color: var(--grey-text); }
+.hours-row .time { color: var(--charcoal); font-weight:600; }
+
+.bank-holiday-note {
+  margin-top:14px;
+  padding:12px;
+  background:rgba(196,112,79,0.07);
+  border-radius:var(--radius-sm);
+  font-size:0.82rem;
+  color:var(--grey-text);
+}
+
+/* Map placeholder */
+.map-ph {
+  width:100%; height:240px; background: var(--cream2);
+  border-radius: var(--radius); border: 1px solid var(--border);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:8px; color: var(--grey-light); font-size:0.9rem;
+  margin-top:20px;
+}
+
+/* Contact form */
+#contact-form { display:block; }
+#contact-ok { display:none; }
+
+.contact-success {
+  text-align:center;
+  padding:30px 16px;
+  background:var(--white);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+
+.success-icon { font-size:2.5rem; margin-bottom:12px; }
+.success-title { font-family:var(--fh); font-size:1.1rem; color:var(--charcoal); margin-bottom:8px; }
+.success-text { font-size:0.9rem; color:var(--grey-text); }
+
+.send-message-title {
+  font-size:1.25rem;
+  margin-bottom:16px;
+}
+
+@media (max-width: 1024px) {
+  .contact-grid { grid-template-columns:1fr; }
+}
+
+@media (max-width: 767px) {
+  .contact-grid { grid-template-columns:1fr; }
+  .hours-grid { grid-template-columns:1fr; }
+  .form-input, .form-select, .form-textarea { font-size: 16px; padding: 14px 16px; min-height: 48px; }
+}
+
+@media (max-width: 440px) {
+  .map-ph { height: 180px; }
+  .contact-left { padding: 0; }
+}
